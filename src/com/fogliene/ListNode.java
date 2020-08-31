@@ -47,4 +47,18 @@ public class ListNode {
 
         node = previous;
     }
+    
+    public ListNode reverseRecursively(ListNode node) {
+        if (node == null || node.nextNode == null) {
+            return node;
+        }
+
+        ListNode newHeadNode = reverseRecursively(node.nextNode);
+
+        // change references for the middle chain
+        node.nextNode.nextNode = node;
+        node.nextNode = null;
+
+        return newHeadNode;
+    }
 }

@@ -29,13 +29,22 @@ public class Main20200827 {
     }
     
     private static void sortNums(Integer[] arr) {
-        Map<Integer, List<Integer>> map = new HashMap<>();
+        int[] count = new int[3];
+        count[0] = 0;
+        count[1] = 0;
+        count[2] = 0;
 
         for (Integer i : arr) {
-            if (! map.containsKey(i)) {
-                map.put(i, new ArrayList<>(i));
+            count[i - 1]++;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (i < count[0]) {
+                arr[i] = 1;
+            } else if (i < count[0] + count[1]) {
+                arr[i] = 2;
             } else {
-                map.get(i).add(i);
+                arr[i] = 3;
             }
         }
     }

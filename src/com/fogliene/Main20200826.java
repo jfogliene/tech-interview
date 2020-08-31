@@ -70,7 +70,8 @@ public class Main20200826 {
         System.out.println("Initial list: ");
         testHead.printList();
 
-        testHead.reverseIteratively(testHead);
+        //testHead.reverseIteratively(testHead);
+        testHead.reverseRecursively(testHead);
 
         System.out.println("List after reversal: ");
         testTail.printList();
